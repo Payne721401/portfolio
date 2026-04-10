@@ -1,0 +1,18 @@
+[
+  {
+    "category": "Languages",
+    "items": ["Python", "C/C++", "SQL", "JavaScript", "Dart"]
+  },
+  {
+    "category": "Backend & Frameworks",
+    "items": ["Flask", "Django", "RESTful APIs", "PostgreSQL", "Selenium"]
+  },
+  {
+    "category": "DevOps & Infrastructure",
+    "items": ["Git", "GitHub Actions", "Docker", "Linux", "Firebase", "Cloudflare R2"]
+  },
+  {
+    "category": "AI / ML",
+    "items": ["PyTorch", "TensorFlow", "Scikit-learn"]
+  }
+]

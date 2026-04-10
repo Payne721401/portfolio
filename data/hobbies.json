@@ -1,0 +1,36 @@
+[
+  {
+    "name": "Cycling",
+    "icon": "🚴",
+    "description": "Road cycling enthusiast focused on long climbs and endurance challenges across Taiwan.",
+    "highlights": [
+      "單車武嶺 3:13:52 — 1st Place, 96 Cycling Race - Wuling",
+      "Completed 一日北高 (Taipei to Kaohsiung in one day, ~360km)"
+    ]
+  },
+  {
+    "name": "Running",
+    "icon": "🏃",
+    "description": "Distance runner competing in road races from 10K to half marathon.",
+    "highlights": [
+      "Half Marathon PB: 1:24:27 (Taipei Marathon)"
+    ]
+  },
+  {
+    "name": "Triathlon",
+    "icon": "🏊",
+    "description": "Swim-bike-run competitor focused on standard-distance events.",
+    "highlights": [
+      "Standard Triathlon (51.5km) — 2:34:38, 7th Place M20 (2025 普悠瑪鐵人三項)",
+      "泳渡日月潭 (Sun Moon Lake Swim Challenge) finisher"
+    ]
+  },
+  {
+    "name": "Hiking",
+    "icon": "🏔️",
+    "description": "High-altitude mountaineering across Taiwan's central mountain range.",
+    "highlights": [
+      "Summited 14 of Taiwan's 百岳 (100 Major Peaks)"
+    ]
+  }
+]

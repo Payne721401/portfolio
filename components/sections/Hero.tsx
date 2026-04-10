@@ -1,0 +1,101 @@
+"use client";
+
+import Image from "next/image";
+import Link from "next/link";
+import { Github, Linkedin, Download, Mail } from "lucide-react";
+import { motion } from "framer-motion";
+import profile from "@/data/profile.json";
+
+export function Hero() {
+  return (
+    <section
+      id="about"
+      className="min-h-screen flex items-center pt-16"
+    >
+      <div className="max-w-4xl mx-auto px-6 py-20 w-full">
+        <div className="flex flex-col-reverse md:flex-row items-center gap-10 md:gap-16">
+          {/* Text */}
+          <motion.div
+            className="flex-1 text-center md:text-left"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            {profile.status && (
+              <span className="inline-flex items-center gap-1.5 text-xs font-medium text-neutral-500 dark:text-neutral-400 mb-4 border border-neutral-200 dark:border-neutral-700 rounded-full px-3 py-1">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                {profile.status}
+              </span>
+            )}
+            <h1 className="font-display text-4xl sm:text-5xl font-bold text-neutral-950 dark:text-neutral-50 leading-tight mb-3">
+              {profile.name}
+            </h1>
+            <p className="text-lg text-neutral-500 dark:text-neutral-400 mb-4">
+              {profile.title}
+            </p>
+            <p className="text-neutral-600 dark:text-neutral-300 leading-relaxed max-w-lg mb-8">
+              {profile.bio}
+            </p>
+
+            {/* CTAs */}
+            <div className="flex flex-wrap items-center justify-center md:justify-start gap-3">
+              <Link
+                href={profile.links.cv}
+                target="_blank"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-neutral-950 dark:bg-neutral-50 text-white dark:text-neutral-950 text-sm font-medium rounded-md hover:opacity-80 transition-opacity"
+              >
+                <Download size={14} />
+                Download CV
+              </Link>
+              <Link
+                href={profile.links.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 border border-neutral-300 dark:border-neutral-700 text-sm font-medium rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
+              >
+                <Github size={14} />
+                GitHub
+              </Link>
+              <Link
+                href={profile.links.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 border border-neutral-300 dark:border-neutral-700 text-sm font-medium rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
+              >
+                <Linkedin size={14} />
+                LinkedIn
+              </Link>
+              <Link
+                href={`mailto:${profile.email}`}
+                className="inline-flex items-center gap-2 px-4 py-2 border border-neutral-300 dark:border-neutral-700 text-sm font-medium rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
+              >
+                <Mail size={14} />
+                Email
+              </Link>
+            </div>
+          </motion.div>
+
+          {/* Hero image */}
+          <motion.div
+            className="flex-shrink-0 relative"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+          >
+            {/* Main cycling photo — landscape */}
+            <div className="w-64 h-44 md:w-80 md:h-56 rounded-2xl overflow-hidden border border-neutral-200 dark:border-neutral-700 bg-neutral-100 dark:bg-neutral-800">
+              <Image
+                src={(profile as typeof profile & { heroImage?: string }).heroImage ?? profile.avatar}
+                alt="Cycling"
+                width={320}
+                height={224}
+                className="object-cover w-full h-full"
+                priority
+              />
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+}

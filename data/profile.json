@@ -1,0 +1,16 @@
+{
+  "name": "Payne Yeh",
+  "nameZh": "葉霈恩",
+  "title": "Software Builder · NTU MS Student",
+  "bio": "Software builder with a background in atmospheric sciences. I enjoy building practical applications to solve everyday problems and have a strong passion for exploring AI/ML applications. Off-screen, you'll usually find me running, road cycling, hiking, or racing triathlons.",
+  "location": "Taiwan",
+  "status": "Open to opportunities",
+  "avatar": "/images/avatar.jpg",
+  "heroImage": "/images/cycling.jpg",
+  "email": "90727sam@gmail.com",
+  "links": {
+    "github": "https://github.com/Payne721401",
+    "linkedin": "https://www.linkedin.com/in/payne-yeh-21362825b/",
+    "cv": "/cv.pdf"
+  }
+}

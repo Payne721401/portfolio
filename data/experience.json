@@ -1,0 +1,30 @@
+[
+  {
+    "company": "Freelance",
+    "role": "Backend Developer",
+    "period": "Apr 2025 – Oct 2025",
+    "location": "Remote",
+    "bullets": [
+      "Developed Python Flask RESTful APIs following Test-Driven Development (TDD) principles.",
+      "Designed PostgreSQL database schemas and created indexes to optimize high-frequency queries.",
+      "100% test coverage."
+    ],
+    "tags": ["Python", "Flask", "RESTful APIs", "PostgreSQL", "TDD"],
+    "links": []
+  },
+  {
+    "company": "Ernst & Young (EY) Consulting",
+    "role": "Web Development & Cybersecurity Intern",
+    "period": "Mar 2024 – Jul 2024",
+    "location": "Taiwan",
+    "bullets": [
+      "Architected an automated bidding crawler and search system based on Django MVC architecture.",
+      "Optimized Python Selenium scraping scripts to process and structure thousands of external records.",
+      "Analyzed banking AI and cybersecurity trends to assist in system compliance assessments."
+    ],
+    "tags": ["Python", "Django", "Selenium", "SQL"],
+    "links": [
+      { "label": "Internship Certificate", "url": "" }
+    ]
+  }
+]

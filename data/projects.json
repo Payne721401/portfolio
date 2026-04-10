@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Taiwan AI Weather App",
+    "description": "Scalable cross-platform weather app using a decoupled architecture with Flutter, Python, Firebase, and Cloudflare R2. Features automated CI/CD pipelines and multi-layer API security.",
+    "tags": ["Flutter", "Python", "Firebase", "Cloudflare R2", "GitHub Actions"],
+    "github": "https://github.com/Payne721401/taiwan-ai-weather",
+    "demo": "https://reurl.cc/O6ERE3",
+    "image": "",
+    "featured": true
+  },
+  {
+    "name": "MQTT-based IoT Smart Classroom",
+    "description": "Real-time smart classroom system using ESP32 MCUs and a Raspberry Pi MQTT broker. Integrated YOLOv8 for occupancy counting to automate HVAC and lighting control.",
+    "tags": ["C/C++", "MQTT", "ESP32", "Raspberry Pi", "YOLOv8"],
+    "github": "https://github.com/Payne721401/iot-smart-classroom",
+    "demo": "https://reurl.cc/2a8lk9",
+    "image": "",
+    "featured": true
+  },
+  {
+    "name": "HRV-based Sleep Stage Classification",
+    "description": "Applied Empirical Mode Decomposition (EMD) on Heart Rate Variability (HRV) signals to extract time-frequency domain features (e.g., SDNN, RMSSD, HF). Trained and evaluated tree-based ensemble models (Random Forest, Decision Tree) to perform 5-class sleep stage classification (Wake, N1, N2, N3, REM)",
+    "tags": ["Python", "Scikit-learn", "Signal Processing", "Machine Learning"],
+    "github": "",
+    "demo": "",
+    "image": "",
+    "featured": false
+  },
+  {
+    "name": "Air Pollution Analysis – Kaohsiung Liveability",
+    "description": "Analyzed air quality monitoring data across Kaohsiung to assess residential liveability. Conducted Exploratory Data Analysis and descriptive statistics to the datasets, producing actionable insights for pollution control policy.",
+    "tags": ["Python", "Pandas", "Spatial Analysis", "Atmospheric Science"],
+    "github": "",
+    "demo": "",
+    "image": "",
+    "featured": false
+  }
+]
