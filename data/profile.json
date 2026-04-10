@@ -6,7 +6,14 @@
   "location": "Taiwan",
   "status": "Open to opportunities",
   "avatar": "/images/avatar.jpg",
-  "heroImage": "/images/cycling.jpg",
+  "photos": [
+    "/images/cycling.jpg",
+    "/images/contest1.jpg",
+    "/images/hiking1.jpg",
+    "/images/contest2.jpg",
+    "/images/running2.jpg",
+    "/images/hiking3.jpg"
+  ],
   "email": "90727sam@gmail.com",
   "links": {
     "github": "https://github.com/Payne721401",
