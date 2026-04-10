@@ -24,9 +24,17 @@ export function Experience() {
               transition={{ duration: 0.4, delay: i * 0.1 }}
             >
               <div className="flex items-start gap-4">
-                <div className="mt-0.5 p-2 rounded-lg bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400">
-                  <Briefcase size={18} />
-                </div>
+                {job.logo ? (
+                  <div className="mt-0.5 w-9 h-9 rounded-lg bg-amber-400 dark:bg-amber-400 flex items-center justify-center flex-shrink-0">
+                    <span className="text-xs font-black text-neutral-950 tracking-tight leading-none">
+                      {job.logo}
+                    </span>
+                  </div>
+                ) : (
+                  <div className="mt-0.5 p-2 rounded-lg bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400">
+                    <Briefcase size={18} />
+                  </div>
+                )}
                 <div className="flex-1 min-w-0">
                   <div className="flex flex-wrap items-start justify-between gap-2">
                     <div>

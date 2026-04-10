@@ -1,6 +1,7 @@
 [
   {
     "company": "Freelance",
+    "logo": "",
     "role": "Backend Developer",
     "period": "Apr 2025 – Oct 2025",
     "location": "Remote",
@@ -14,6 +15,7 @@
   },
   {
     "company": "Ernst & Young (EY) Consulting",
+    "logo": "EY",
     "role": "Web Development & Cybersecurity Intern",
     "period": "Mar 2024 – Jul 2024",
     "location": "Taiwan",

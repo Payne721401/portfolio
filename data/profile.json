@@ -7,6 +7,7 @@
   "status": "Open to opportunities",
   "avatar": "/images/avatar.jpg",
   "photos": [
+    { "src": "/images/avatar.jpg", "position": "top center" },
     "/images/cycling.jpg",
     "/images/contest1.jpg",
     "/images/hiking1.jpg",

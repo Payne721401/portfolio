@@ -7,7 +7,8 @@ import { Github, Linkedin, Download, Mail } from "lucide-react";
 import { motion } from "framer-motion";
 import profile from "@/data/profile.json";
 
-const photos = (profile as typeof profile & { photos?: string[] }).photos ?? [profile.avatar];
+type PhotoEntry = string | { src: string; position?: string };
+const photos = (profile as typeof profile & { photos?: PhotoEntry[] }).photos ?? [profile.avatar];
 
 export function Hero() {
   const stripRef = useRef<HTMLDivElement>(null);
@@ -104,21 +105,26 @@ export function Hero() {
               onScroll={handleScroll}
               className="flex gap-3 overflow-x-auto snap-x snap-mandatory scroll-smooth [&::-webkit-scrollbar]:hidden [scrollbar-width:none]"
             >
-              {photos.map((src, i) => (
-                <div
-                  key={i}
-                  className="flex-shrink-0 w-72 h-52 md:w-80 md:h-60 rounded-2xl overflow-hidden snap-start border border-neutral-200 dark:border-neutral-700 bg-neutral-100 dark:bg-neutral-800"
-                >
-                  <Image
-                    src={src}
-                    alt={`Photo ${i + 1}`}
-                    width={320}
-                    height={240}
-                    className="object-cover w-full h-full"
-                    priority={i === 0}
-                  />
-                </div>
-              ))}
+              {photos.map((photo, i) => {
+                const src = typeof photo === "string" ? photo : photo.src;
+                const position = typeof photo === "string" ? "center" : (photo.position ?? "center");
+                return (
+                  <div
+                    key={i}
+                    className="flex-shrink-0 w-72 h-64 md:w-80 md:h-72 rounded-2xl overflow-hidden snap-start border border-neutral-200 dark:border-neutral-700 bg-neutral-100 dark:bg-neutral-800"
+                  >
+                    <Image
+                      src={src}
+                      alt={`Photo ${i + 1}`}
+                      width={320}
+                      height={288}
+                      className="object-cover w-full h-full"
+                      style={{ objectPosition: position }}
+                      priority={i === 0}
+                    />
+                  </div>
+                );
+              })}
             </div>
 
             {/* Dot indicators — only shown when there are multiple photos */}
