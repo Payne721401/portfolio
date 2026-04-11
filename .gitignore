@@ -20,3 +20,12 @@ yarn-error.log*
 .DS_Store
 .vscode/
 .idea/
+
+# LaTeX auxiliary files (keep cv.tex and cv.pdf, ignore build artifacts)
+cv/*.aux
+cv/*.log
+cv/*.out
+cv/*.fls
+cv/*.fdb_latexmk
+cv/*.synctex.gz
+cv/*.toc

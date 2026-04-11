@@ -1,0 +1,33 @@
+name: Compile LaTeX CV
+
+on:
+  push:
+    paths:
+      - "cv/cv.tex"
+    branches: [main]
+  workflow_dispatch: # also allow manual trigger from GitHub Actions tab
+
+permissions:
+  contents: write # needed to commit the compiled PDF back
+
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Compile LaTeX
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: cv.tex
+          working_directory: cv
+
+      - name: Copy PDF to public/
+        run: cp cv/cv.pdf public/cv.pdf
+
+      - name: Commit compiled PDF
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: recompile cv.pdf from LaTeX source"
+          file_pattern: public/cv.pdf
