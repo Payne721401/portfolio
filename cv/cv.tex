@@ -1,6 +1,7 @@
 % =============================================================
-%  Payne (Pei En) Yeh — Curriculum Vitae
-%  Edit this file, push to GitHub → public/cv.pdf auto-updates
+%  Payne (Pei En) Yeh -- Curriculum Vitae
+%  Mirrors the original PDF exactly.
+%  Compiled with pdfLaTeX (no CJK packages needed).
 % =============================================================
 \documentclass[10pt, a4paper]{article}
 
@@ -17,7 +18,7 @@
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0pt}
 
-% ---- Section style (bold heading + full-width rule) ----------
+% ---- Section style -------------------------------------------
 \titleformat{\section}
   {\bfseries\large}{}{0em}{}
   [\vspace{-4pt}\rule{\linewidth}{0.6pt}\vspace{2pt}]
@@ -25,26 +26,6 @@
 
 % ---- List style ----------------------------------------------
 \setlist[itemize]{noitemsep, topsep=2pt, parsep=0pt, leftmargin=1.4em}
-
-% ---- Work / project entry ------------------------------------
-% \workentry{Role}{Company}{Tech | Period}{bullets}
-\newcommand{\workentry}[4]{%
-  \noindent\textbf{#1}\\[-1pt]
-  \textit{#2}\\[-3pt]
-  {\small\textcolor[gray]{0.4}{#3}}
-  \begin{itemize}
-    #4
-  \end{itemize}
-  \vspace{2pt}
-}
-
-% ---- Education entry -----------------------------------------
-% \eduentry{School}{Period}{Degree + notes}
-\newcommand{\eduentry}[3]{%
-  \noindent\textbf{#1} \hfill \textit{\small #2}\\[-1pt]
-  {\small #3}
-  \vspace{4pt}
-}
 
 % ==============================================================
 \begin{document}
@@ -58,20 +39,19 @@
     \faEnvelope\ \href{mailto:90727sam@gmail.com}{90727sam@gmail.com}
     \enspace\textbar\enspace
     \faPhone\ 0963-581-713
-    \enspace\textbar\enspace
-    \faGithub\ \href{https://github.com/Payne721401}{Payne721401}
   }
 \end{center}
 
 % ---- EDUCATION -----------------------------------------------
 \section{Education}
 
-\eduentry{National Taiwan University (NTU)}{Sep 2026 -- Jun 2028 (Expected)}
-  {MS in Atmospheric Sciences \textit{(On Leave)}}
+\noindent\textbf{National Taiwan University (NTU)} \hfill \textit{Sep 2026 -- Jun 2028 (Expected)}\\
+MS in Atmospheric Sciences \textit{(On Leave)}
 
-\eduentry{National Central University (NCU)}{Sep 2020 -- Jun 2024}
-  {BS in Atmospheric Sciences \enspace\textbar\enspace AI Application Credit Program \enspace\textbar\enspace
-   2024 NCU Outstanding Student Scholarship}
+\vspace{6pt}
+\noindent\textbf{National Central University (NCU)} \hfill \textit{Sep 2020 -- Jun 2024}\\
+BS in Atmospheric Sciences \enspace\textbar\enspace AI Application Credit Program \enspace\textbar\enspace
+2024 NCU Outstanding Student Scholarship
 
 % ---- SKILLS --------------------------------------------------
 \section{Skills}
@@ -90,34 +70,32 @@
   \item \textbf{1st Place,} NCU Sustainable Innovation Proposal Competition (2023)
   \item \textbf{2nd Place,} Weather Hackathon (2023) \textit{(Previously 3rd Place in 2022)}
   \item \textbf{Finalist (Notable Award),} National Smart Innovation Cross-disciplinary Competition (2023)
-  \item \textbf{3rd Place,} NCU Campus Planning Proposal Competition (2020)
-  \item NCU Outstanding Student Scholarship (2024)
 \end{itemize}
 
 % ---- WORK EXPERIENCE -----------------------------------------
 \section{Work Experience}
 
-\workentry
-  {Freelance Backend Developer}
-  {}
-  {Python (Flask), RESTful APIs, PostgreSQL, TDD \enspace\textbar\enspace Apr 2025 -- Oct 2025}
-  {\item Developed Python Flask RESTful APIs following Test-Driven Development (TDD) principles.
-   \item Designed PostgreSQL database schemas and created indexes to optimize high-frequency queries.
-   \item Achieved 100\% automated test coverage.}
+\noindent\textbf{Freelance Backend Developer}\\
+{\small Python (Flask), RESTful APIs, PostgreSQL, TDD \enspace\textbar\enspace Apr 2025 -- Oct 2025}
+\begin{itemize}
+  \item Developed Python Flask RESTful APIs following Test-Driven Development (TDD) principles.
+  \item Designed PostgreSQL database schemas and created indexes to optimize high-frequency queries.
+\end{itemize}
 
-\workentry
-  {Ernst \& Young (EY) Consulting — Web Development \& Cybersecurity Intern}
-  {}
-  {Python (Django, Selenium), SQL \enspace\textbar\enspace Mar 2024 -- Jul 2024}
-  {\item Architected an automated bidding crawler and search system based on Django MVC architecture.
-   \item Optimized Python Selenium scraping scripts to process and structure thousands of external records.
-   \item Analyzed banking AI and cybersecurity trends to assist in system compliance assessments.}
+\vspace{4pt}
+\noindent\textbf{Ernst \& Young (EY) Consulting -- Web Development \& Cybersecurity Intern}\\
+{\small Python (Django, Selenium), SQL \enspace\textbar\enspace Mar 2024 -- Jul 2024}
+\begin{itemize}
+  \item Architected an automated bidding crawler and search system based on Django MVC architecture.
+  \item Optimized Python Selenium scraping scripts to process and structure thousands of external records.
+  \item Analyzed banking AI and cybersecurity trends to assist in system compliance assessments.
+\end{itemize}
 
 % ---- SELECTED PROJECTS ---------------------------------------
 \section{Selected Projects}
 
 \noindent\textbf{Taiwan AI Weather App} \enspace\textbar\enspace
-  \href{https://github.com/Payne721401/taiwan-ai-weather}{[Github]} \enspace\textbar\enspace
+  \href{https://github.com/Payne721401}{[Github]} \enspace\textbar\enspace
   Flutter, Python, GitHub Actions, Firebase, Cloudflare R2\\
 {\small Demo: \href{https://reurl.cc/O6ERE3}{https://reurl.cc/O6ERE3}}
 \begin{itemize}
@@ -125,8 +103,8 @@
   \item Automated CI/CD pipelines via GitHub Actions and implemented R2 caching to minimize server load.
   \item Integrated Firebase App Check and FreeRASP for multi-layer security against unauthorized API access.
 \end{itemize}
-\vspace{3pt}
 
+\vspace{4pt}
 \noindent\textbf{MQTT-based IoT Smart Classroom} \enspace\textbar\enspace
   C/C++, MQTT, ESP32, YOLOv8\\
 {\small Demo: \href{https://reurl.cc/2a8lk9}{https://reurl.cc/2a8lk9}}
@@ -134,59 +112,6 @@
   \item Developed ESP32 MCU (C/C++) and a Raspberry Pi MQTT broker for real-time sensor control.
   \item Integrated YOLOv8 for real-time occupancy counting to automate HVAC and lighting control.
   \item Awarded Finalist in the National Smart Innovation Cross-disciplinary Competition.
-\end{itemize}
-\vspace{3pt}
-
-\noindent\textbf{HRV-based Sleep Stage Classification} \enspace\textbar\enspace
-  Python, Scikit-learn, Signal Processing
-\begin{itemize}
-  \item Applied EMD on HRV signals to extract time-frequency features (SDNN, RMSSD, HF power).
-  \item Trained Random Forest and Decision Tree models for 5-class sleep staging (Wake, N1, N2, N3, REM).
-\end{itemize}
-\vspace{3pt}
-
-\noindent\textbf{Air Pollution Analysis — Kaohsiung Liveability} \enspace\textbar\enspace
-  Python, Pandas, Atmospheric Science
-\begin{itemize}
-  \item Conducted EDA and descriptive statistics on PM2.5/AQI datasets across Kaohsiung districts.
-  \item Produced insights for pollution control policy based on spatial trend analysis.
-\end{itemize}
-
-% ---- ACTIVITIES ----------------------------------------------
-\section{Activities}
-
-\noindent\textbf{NCU Athletics Team} — Long-Distance Athlete (5000m / 10000m) \hfill
-  \textit{\small Sep 2020 -- Jun 2024}\\
-{\small Represented NCU at National University Games (\,全大運\,) in 5000m and 10000m events.}
-
-\vspace{5pt}
-\noindent\textbf{NCU Cycling Club} — Officer, Teaching \& Visual Design \hfill
-  \textit{\small Sep 2021 -- Jun 2023}\\
-{\small Organized beginner cycling workshops and managed club Facebook/Instagram accounts.}
-
-\vspace{5pt}
-\noindent\textbf{紙船計畫 (Paper Boat Project)} — Volunteer Tutor \hfill
-  \textit{\small 2022}\\
-{\small Provided 110 hours of free online tutoring for students in Taitung (台東高中 / 台東新生國中).}
-
-% ---- LANGUAGES -----------------------------------------------
-\section{Languages}
-
-\begin{itemize}
-  \item \textbf{Chinese (Traditional)}: Native
-  \item \textbf{English}: Professional Working Proficiency \enspace\textbar\enspace TOEIC 870
-\end{itemize}
-
-% ---- SPORTS ACHIEVEMENTS -------------------------------------
-\section{Sports Achievements}
-
-\begin{itemize}
-  \item \textbf{Cycling}:\ \ 武嶺 KOM 3:13:52 — 1st Place, 96 Challenge Group;\enspace
-        一日北高 $\approx$360\,km (Taipei to Kaohsiung)
-  \item \textbf{Triathlon}: Standard 51.5\,km — 2:34:38, 7th Place M20 (2025 普悠瑪鐵人三項);\enspace
-        泳渡日月潭 finisher
-  \item \textbf{Running}:\ \ Half Marathon PB 1:24:27 (Taipei Marathon)
-  \item \textbf{Hiking}:\ \ \ 14 of Taiwan's 百岳 (100 Major Peaks)
 \end{itemize}
 
 \end{document}
