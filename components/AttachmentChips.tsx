@@ -5,11 +5,15 @@ import Link from "next/link";
 import { FileText, ImageIcon, ExternalLink, X } from "lucide-react";
 import { SiInstagram } from "react-icons/si";
 
+// Strict type for external reference / documentation
 export interface Attachment {
   type: "pdf" | "image" | "link";
   label: string;
   url: string;
 }
+
+// Wide type used internally so JSON imports (inferred as string) are accepted
+type AnyAttachment = { type: string; label: string; url: string };
 
 function linkIcon(label: string) {
   const l = label.toLowerCase();
@@ -49,8 +53,8 @@ function Lightbox({ src, label, onClose }: { src: string; label: string; onClose
 const chipClass =
   "inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-md border border-neutral-200 dark:border-neutral-700 text-neutral-500 dark:text-neutral-400 hover:text-neutral-950 dark:hover:text-neutral-50 hover:border-neutral-400 dark:hover:border-neutral-500 transition-colors";
 
-export function AttachmentChips({ attachments }: { attachments: Attachment[] }) {
-  const [lightbox, setLightbox] = useState<Attachment | null>(null);
+export function AttachmentChips({ attachments }: { attachments: AnyAttachment[] }) {
+  const [lightbox, setLightbox] = useState<AnyAttachment | null>(null);
 
   const visible = attachments.filter((a) => a.url);
   if (!visible.length) return null;
