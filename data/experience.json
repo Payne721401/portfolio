@@ -11,7 +11,7 @@
       "100% test coverage."
     ],
     "tags": ["Python", "Flask", "RESTful APIs", "PostgreSQL", "TDD"],
-    "links": []
+    "attachments": []
   },
   {
     "company": "Ernst & Young (EY) Consulting",
@@ -25,8 +25,8 @@
       "Analyzed banking AI and cybersecurity trends to assist in system compliance assessments."
     ],
     "tags": ["Python", "Django", "Selenium", "SQL"],
-    "links": [
-      { "label": "Internship Certificate", "url": "" }
+    "attachments": [
+      { "type": "image", "label": "Internship Certificate", "url": "/awards/ey_intern.jpg" }
     ]
   }
 ]

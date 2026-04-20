@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { SectionHeading } from "@/components/SectionHeading";
+import { AttachmentChips } from "@/components/AttachmentChips";
 import hobbies from "@/data/hobbies.json";
 
 export function Hobbies() {
@@ -41,6 +42,7 @@ export function Hobbies() {
                   ))}
                 </ul>
               )}
+              <AttachmentChips attachments={hobby.attachments ?? []} />
             </motion.div>
           ))}
         </div>

@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Trophy } from "lucide-react";
 import { SectionHeading } from "@/components/SectionHeading";
+import { AttachmentChips } from "@/components/AttachmentChips";
 import awards from "@/data/awards.json";
 
 export function Awards() {
@@ -42,6 +43,7 @@ export function Awards() {
                     {award.description}
                   </p>
                 )}
+                <AttachmentChips attachments={award.attachments ?? []} />
               </div>
             </motion.div>
           ))}

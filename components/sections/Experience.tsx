@@ -1,9 +1,9 @@
 "use client";
 
-import Link from "next/link";
 import { motion } from "framer-motion";
-import { Briefcase, Paperclip } from "lucide-react";
+import { Briefcase } from "lucide-react";
 import { SectionHeading } from "@/components/SectionHeading";
+import { AttachmentChips } from "@/components/AttachmentChips";
 import experience from "@/data/experience.json";
 
 export function Experience() {
@@ -72,22 +72,7 @@ export function Experience() {
                       ))}
                     </div>
                   )}
-                  {job.links && job.links.filter(l => l.url).length > 0 && (
-                    <div className="flex flex-wrap gap-2 mt-3 pt-3 border-t border-neutral-100 dark:border-neutral-800">
-                      {job.links.filter(l => l.url).map((link, k) => (
-                        <Link
-                          key={k}
-                          href={link.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1.5 text-xs text-neutral-500 dark:text-neutral-400 hover:text-neutral-950 dark:hover:text-neutral-50 transition-colors"
-                        >
-                          <Paperclip size={11} />
-                          {link.label}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
+                  <AttachmentChips attachments={job.attachments ?? []} />
                 </div>
               </div>
             </motion.div>

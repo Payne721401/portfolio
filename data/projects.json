@@ -3,7 +3,7 @@
     "name": "Taiwan AI Weather App",
     "description": "Scalable cross-platform weather app using a decoupled architecture with Flutter, Python, Firebase, and Cloudflare R2. Features automated CI/CD pipelines and multi-layer API security.",
     "tags": ["Flutter", "Python", "Firebase", "Cloudflare R2", "GitHub Actions"],
-    "github": "https://github.com/Payne721401/taiwan-ai-weather",
+    "github": "https://github.com/Payne721401/FlutterWeatherApp",
     "demo": "https://reurl.cc/O6ERE3",
     "image": "",
     "featured": true
@@ -19,7 +19,7 @@
   },
   {
     "name": "HRV-based Sleep Stage Classification",
-    "description": "Applied Empirical Mode Decomposition (EMD) on Heart Rate Variability (HRV) signals to extract time-frequency domain features (e.g., SDNN, RMSSD, HF). Trained and evaluated tree-based ensemble models (Random Forest, Decision Tree) to perform 5-class sleep stage classification (Wake, N1, N2, N3, REM)",
+    "description": "Applied Empirical Mode Decomposition (EMD) on Heart Rate Variability (HRV) signals to extract time-frequency domain features (e.g., SDNN, RMSSD, HF). Trained and evaluated tree-based ensemble models (Random Forest, Decision Tree, SVM) to perform 5-class sleep stage classification (Wake, N1, N2, N3, REM)",
     "tags": ["Python", "Scikit-learn", "Signal Processing", "Machine Learning"],
     "github": "",
     "demo": "",

@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useRef, useState } from "react";
-import { Github, Linkedin, Download, Mail } from "lucide-react";
+import { Github, Linkedin, Download, Mail, ChevronLeft, ChevronRight } from "lucide-react";
 import { motion } from "framer-motion";
 import profile from "@/data/profile.json";
 
@@ -100,6 +100,27 @@ export function Hero() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
+            <div className="relative group">
+              {/* Left arrow */}
+              {photos.length > 1 && (
+                <button
+                  onClick={() => { const prev = (activeIdx - 1 + photos.length) % photos.length; scrollTo(prev); }}
+                  aria-label="Previous photo"
+                  className="absolute left-2 top-1/2 -translate-y-1/2 z-10 p-1.5 rounded-full bg-black/30 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-200 hover:bg-black/50 backdrop-blur-sm"
+                >
+                  <ChevronLeft size={18} />
+                </button>
+              )}
+              {/* Right arrow */}
+              {photos.length > 1 && (
+                <button
+                  onClick={() => { const next = (activeIdx + 1) % photos.length; scrollTo(next); }}
+                  aria-label="Next photo"
+                  className="absolute right-2 top-1/2 -translate-y-1/2 z-10 p-1.5 rounded-full bg-black/30 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-200 hover:bg-black/50 backdrop-blur-sm"
+                >
+                  <ChevronRight size={18} />
+                </button>
+              )}
             <div
               ref={stripRef}
               onScroll={handleScroll}
@@ -126,6 +147,8 @@ export function Hero() {
                 );
               })}
             </div>
+
+            </div>{/* end relative group */}
 
             {/* Dot indicators — only shown when there are multiple photos */}
             {photos.length > 1 && (

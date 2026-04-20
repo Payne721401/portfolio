@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Users, Trophy, Heart, Mountain } from "lucide-react";
 import { SectionHeading } from "@/components/SectionHeading";
+import { AttachmentChips } from "@/components/AttachmentChips";
 import activities from "@/data/activities.json";
 
 const TYPE_ICON: Record<string, React.ReactNode> = {
@@ -69,6 +70,7 @@ export function Activities() {
                       ))}
                     </ul>
                   )}
+                  <AttachmentChips attachments={item.attachments ?? []} />
                 </div>
               </div>
             </motion.div>
