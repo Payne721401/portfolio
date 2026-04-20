@@ -1,6 +1,5 @@
 % =============================================================
 %  Payne (Pei En) Yeh -- Curriculum Vitae
-%  Mirrors the original PDF exactly.
 %  Compiled with pdfLaTeX (no CJK packages needed).
 % =============================================================
 \documentclass[10pt, a4paper]{article}
@@ -22,7 +21,7 @@
 \titleformat{\section}
   {\bfseries\large}{}{0em}{}
   [\vspace{-4pt}\rule{\linewidth}{0.6pt}\vspace{2pt}]
-\titlespacing*{\section}{0pt}{10pt}{4pt}
+\titlespacing*{\section}{0pt}{12pt}{4pt}
 
 % ---- List style ----------------------------------------------
 \setlist[itemize]{noitemsep, topsep=2pt, parsep=0pt, leftmargin=1.4em}
@@ -67,6 +66,7 @@ BS in Atmospheric Sciences \enspace\textbar\enspace AI Application Credit Progra
 \section{Awards \& Competitions}
 
 \begin{itemize}
+  \item \textbf{NCU Outstanding Student Scholarship} (2024)
   \item \textbf{1st Place,} NCU Sustainable Innovation Proposal Competition (2023)
   \item \textbf{2nd Place,} Weather Hackathon (2023) \textit{(Previously 3rd Place in 2022)}
   \item \textbf{Finalist (Notable Award),} National Smart Innovation Cross-disciplinary Competition (2023)
@@ -80,9 +80,10 @@ BS in Atmospheric Sciences \enspace\textbar\enspace AI Application Credit Progra
 \begin{itemize}
   \item Developed Python Flask RESTful APIs following Test-Driven Development (TDD) principles.
   \item Designed PostgreSQL database schemas and created indexes to optimize high-frequency queries.
+  \item Achieved 100\% test coverage across all API endpoints.
 \end{itemize}
 
-\vspace{4pt}
+\vspace{6pt}
 \noindent\textbf{Ernst \& Young (EY) Consulting -- Web Development \& Cybersecurity Intern}\\
 {\small Python (Django, Selenium), SQL \enspace\textbar\enspace Mar 2024 -- Jul 2024}
 \begin{itemize}
@@ -95,7 +96,7 @@ BS in Atmospheric Sciences \enspace\textbar\enspace AI Application Credit Progra
 \section{Selected Projects}
 
 \noindent\textbf{Taiwan AI Weather App} \enspace\textbar\enspace
-  \href{https://github.com/Payne721401}{[Github]} \enspace\textbar\enspace
+  \href{https://github.com/Payne721401/FlutterWeatherApp}{[GitHub]} \enspace\textbar\enspace
   Flutter, Python, GitHub Actions, Firebase, Cloudflare R2\\
 {\small Demo: \href{https://reurl.cc/O6ERE3}{https://reurl.cc/O6ERE3}}
 \begin{itemize}
@@ -104,14 +105,23 @@ BS in Atmospheric Sciences \enspace\textbar\enspace AI Application Credit Progra
   \item Integrated Firebase App Check and FreeRASP for multi-layer security against unauthorized API access.
 \end{itemize}
 
-\vspace{4pt}
+\vspace{6pt}
 \noindent\textbf{MQTT-based IoT Smart Classroom} \enspace\textbar\enspace
+  \href{https://github.com/Payne721401/iot-smart-classroom}{[GitHub]} \enspace\textbar\enspace
   C/C++, MQTT, ESP32, YOLOv8\\
 {\small Demo: \href{https://reurl.cc/2a8lk9}{https://reurl.cc/2a8lk9}}
 \begin{itemize}
-  \item Developed ESP32 MCU (C/C++) and a Raspberry Pi MQTT broker for real-time sensor control.
+  \item Developed ESP32 MCU firmware (C/C++) and a Raspberry Pi MQTT broker for real-time sensor control.
   \item Integrated YOLOv8 for real-time occupancy counting to automate HVAC and lighting control.
-  \item Awarded Finalist in the National Smart Innovation Cross-disciplinary Competition.
+  \item Awarded Finalist in the National Smart Innovation Cross-disciplinary Competition (2023).
+\end{itemize}
+
+\vspace{6pt}
+\noindent\textbf{HRV-based Sleep Stage Classification} \enspace\textbar\enspace
+  Python, Scikit-learn, Signal Processing
+\begin{itemize}
+  \item Applied Empirical Mode Decomposition (EMD) on HRV signals to extract time-frequency features (SDNN, RMSSD, HF power).
+  \item Trained Random Forest, Decision Tree, and SVM models for 5-class sleep stage classification (Wake, N1--N3, REM).
 \end{itemize}
 
 \end{document}
