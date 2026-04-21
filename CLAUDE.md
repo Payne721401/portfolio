@@ -57,42 +57,43 @@ Profolio/                        ← local folder (can rename to portfolio)
 │   ├── Footer.tsx
 │   ├── SectionHeading.tsx
 │   ├── ThemeProvider.tsx
+│   ├── AttachmentChips.tsx      ← Reusable PDF/image/link chips with lightbox
 │   └── sections/
-│       ├── Hero.tsx             ← Scrollable photo carousel (profile.photos array)
+│       ├── Hero.tsx             ← Scrollable photo carousel + hover arrows
 │       ├── Education.tsx
-│       ├── Experience.tsx       ← Supports job.logo monogram + job.links attachments
-│       ├── Projects.tsx
+│       ├── Experience.tsx       ← job.logo monogram + job.attachments chips
+│       ├── Projects.tsx         ← Split into "Side Projects" / "Academic Research" groups
 │       ├── Publications.tsx     ← Returns null when empty (hidden from SideNav)
 │       ├── Skills.tsx           ← react-icons/si tech icons via SKILL_ICONS map
 │       ├── Certifications.tsx   ← Returns null when empty (hidden from SideNav)
 │       ├── Languages.tsx        ← Proficiency dot indicators + optional TOEIC score
-│       ├── Awards.tsx
-│       ├── Activities.tsx       ← Clubs, sports teams, volunteer work
-│       ├── Hobbies.tsx
+│       ├── Awards.tsx           ← Supports attachments chips
+│       ├── Activities.tsx       ← Clubs, sports teams, volunteer; supports attachments chips
+│       ├── Hobbies.tsx          ← Supports attachments chips
 │       └── Contact.tsx
 ├── data/                        ← ⭐ ALL personal data lives here, never edit UI for data
 │   ├── profile.json             ← name, title, bio, photos[], email, links
 │   ├── education.json
-│   ├── experience.json          ← supports logo, links[] per entry
-│   ├── projects.json
+│   ├── experience.json          ← supports logo, attachments[] per entry
+│   ├── projects.json            ← supports category: "side" | "academic"
 │   ├── skills.json
-│   ├── awards.json
+│   ├── awards.json              ← supports attachments[]
 │   ├── certifications.json      ← empty array → section auto-hides
 │   ├── publications.json        ← empty array → section auto-hides
 │   ├── languages.json           ← supports score field (TOEIC etc.)
-│   ├── hobbies.json
-│   └── activities.json          ← clubs, sports teams, volunteer
+│   ├── hobbies.json             ← supports attachments[]
+│   └── activities.json          ← clubs, sports teams, volunteer; supports attachments[]
 ├── content/blog/                ← .mdx blog posts
 ├── public/
 │   ├── cv.pdf                   ← compiled by GitHub Actions from cv/cv.tex
-│   └── images/                  ← ⚠️ NOT in git — must copy manually when migrating
-│       ├── avatar.jpg           ← graduation photo (portrait)
-│       ├── cycling.jpg          ← cycling race photo (landscape)
-│       ├── contest1.jpg
-│       ├── contest2.jpg
-│       ├── running2.jpg
-│       ├── hiking1.jpg
-│       └── hiking3.jpg
+│   ├── awards/                  ← ⚠️ NOT in git — certificate/award images
+│   └── images/                  ← ⚠️ NOT in git — hero carousel photos
+│       ├── avatar.jpg
+│       ├── cycling.jpg
+│       ├── contest1.jpg / contest2.jpg
+│       ├── running1.jpg / running2.jpg
+│       ├── hiking1.jpg / hiking2.jpg / hiking3.jpg / hiking4.jpg
+│       └── marathon.jpg
 ├── cv/
 │   └── cv.tex                   ← LaTeX CV source (auto-compiled by GitHub Actions)
 ├── lib/
@@ -126,12 +127,25 @@ Set the data file to an empty array `[]`. The component returns `null`, and Side
 dynamically filters it out via `document.getElementById(id)` check on mount.
 Currently hidden: Publications, Certifications.
 
-### Adding experience attachments
-In `data/experience.json`, add `links` array:
+### AttachmentChips — adding PDF / image / link chips to any card
+Supported in: `experience.json`, `awards.json`, `activities.json`, `hobbies.json`
+
 ```json
-"links": [{ "label": "Certificate", "url": "https://..." }]
+"attachments": [
+  { "type": "pdf",   "label": "Certificate", "url": "/attachments/cert.pdf" },
+  { "type": "image", "label": "Photo",       "url": "/awards/photo.jpg" },
+  { "type": "link",  "label": "Instagram",   "url": "https://instagram.com/..." }
+]
 ```
-Only entries with non-empty `url` are rendered.
+- `pdf` → opens in new tab
+- `image` → opens fullscreen lightbox
+- `link` → opens in new tab; label containing "instagram" auto-shows IG icon
+- Files go in `public/awards/` or `public/attachments/` (URL = `/awards/file.jpg`)
+- Empty `url` = chip hidden automatically
+
+### Projects category split
+In `data/projects.json`, each entry has `"category": "side"` or `"category": "academic"`.
+`Projects.tsx` renders them in two groups with labels "Side Projects" / "Academic Research".
 
 ### Adding a skill icon
 In `components/sections/Skills.tsx`, add to `SKILL_ICONS`:
@@ -195,6 +209,8 @@ Or fix permanently (run once):
 | Clipboard error in preview | Next.js devtools bug in iframe, not user code, ignore |
 | `next-mdx-remote` CVE | Fixed at v6.0.0+ |
 | Navbar links from /blog page | All section links use `href="/#section"` format |
+| JSON type error on AttachmentChips | Component uses `AnyAttachment` (type: string) internally; `Attachment` interface kept for docs |
+| `git push` rejected | Remote has GitHub Actions auto-commits; use `git pull --rebase` then push |
 
 ---
 
@@ -203,7 +219,8 @@ Or fix permanently (run once):
 - [ ] Install Node.js (winget: `winget install OpenJS.NodeJS`)
 - [ ] Clone repo: `git clone https://github.com/Payne721401/portfolio.git`
 - [ ] `cd portfolio && npm install`
-- [ ] Copy `public/images/` folder from old computer (images are gitignored)
+- [ ] Copy `public/images/` folder from old computer (gitignored — hero photos)
+- [ ] Copy `public/awards/` folder from old computer (gitignored — certificates & award photos)
 - [ ] `npm run dev` → verify at localhost:3000
 - [ ] Set git identity: `git config --global user.email "90727sam@gmail.com"` and `git config --global user.name "Payne Yeh"`
 - [ ] Install Claude Code if continuing AI-assisted development
