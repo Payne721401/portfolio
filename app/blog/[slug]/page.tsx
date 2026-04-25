@@ -1,6 +1,11 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { MDXRemote } from "next-mdx-remote/rsc";
+import remarkGfm from "remark-gfm";
+import remarkMath from "remark-math";
+import rehypeKatex from "rehype-katex";
+import "katex/dist/katex.min.css";
 import { getAllPostSlugs, getPostBySlug } from "@/lib/mdx";
 import { ArrowLeft, Calendar, Clock, Tag } from "lucide-react";
 
@@ -72,7 +77,41 @@ export default async function PostPage({
 
       {/* Content */}
       <article className="prose prose-neutral dark:prose-invert max-w-none prose-code:font-mono">
-        <MDXRemote source={post.content} />
+        <MDXRemote
+          source={post.content}
+          options={{
+            mdxOptions: {
+              remarkPlugins: [remarkGfm, remarkMath],
+              rehypePlugins: [rehypeKatex],
+            },
+          }}
+          components={{
+            a: ({ href, children, ...props }) => {
+              const isExternal = href?.startsWith("http");
+              return (
+                <a
+                  href={href}
+                  target={isExternal ? "_blank" : undefined}
+                  rel={isExternal ? "noopener noreferrer" : undefined}
+                  {...props}
+                >
+                  {children}
+                </a>
+              );
+            },
+            img: ({ src, alt }) => (
+              <span className="block my-6">
+                <Image
+                  src={src ?? ""}
+                  alt={alt ?? ""}
+                  width={800}
+                  height={600}
+                  className="rounded-lg w-full h-auto"
+                />
+              </span>
+            ),
+          }}
+        />
       </article>
     </div>
   );

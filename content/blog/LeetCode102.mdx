@@ -1,0 +1,83 @@
+---
+title: "LeetCode 102– Binary Tree Level Order Traversal"
+date: "2026-04-25"
+category: "LeetCode"
+tags: ["Leetcode", "Binary Tree", "BFS"]
+summary: "LeetCode Practice: Binary Tree Level Order Traversal"
+---
+
+## 題目敘述：給定二元樹，回傳level order traversal的2D 陣列 (難度: medium)
+https://leetcode.com/problems/binary-tree-level-order-traversal/description/?envType=study-plan-v2&envId=top-interview-150
+
+說到level order我們就會馬上想到BFS，因此我們使用Queue來解決這個問題
+
+```cpp
+    if (root!=nullptr){
+        std::queue<TreeNode*> Queue;
+        Queue.push(root);
+
+        //...接後續邏輯
+    }
+```
+接著我們每次while迴圈把每層的節點pop出來存進level這個動態陣列內
+若是遇到該節點有子節點，push進queue
+要記得先把queue的當前size記錄下來跑for迴圈
+才會成功遍歷該層
+並在for迴圈遍歷結束後將level陣列push進目標陣列
+
+完整邏輯如下：
+
+```cpp
+    while (!Queue.empty()){
+        int levelsize = Queue.size();
+        vector<int> level;
+
+        for (int i=0; i<levelsize; i++){
+            TreeNode* current = Queue.front();
+            Queue.pop();
+            level.push_back(current->val);
+
+            if (current->left) Queue.push(current->left);
+            if (current->right) Queue.push(current->right);
+        }
+        
+        levelorder.push_back(level);   
+    }
+```
+
+#### 完整程式碼
+
+```cpp
+class Solution {
+public:
+    vector<vector<int>> levelOrder(TreeNode* root) {
+        vector<vector<int>> levelorder;
+
+        if (root!=nullptr){
+            std::queue<TreeNode*> Queue;
+            Queue.push(root);
+
+            while (!Queue.empty()){
+                int levelsize = Queue.size();
+                vector<int> level;
+
+                for (int i=0; i<levelsize; i++){
+                    TreeNode* current = Queue.front();
+                    Queue.pop();
+                    level.push_back(current->val);
+
+                    if (current->left) Queue.push(current->left);
+                    if (current->right) Queue.push(current->right);
+                }
+
+                levelorder.push_back(level);   
+            }
+        }
+        return levelorder;
+    }
+};
+```
+
+### 複雜度分析
+
+一共把n個節點都遍歷過，時間複雜度為$O(n)$

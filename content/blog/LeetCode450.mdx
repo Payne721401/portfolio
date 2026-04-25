@@ -1,0 +1,169 @@
+---
+title: "LeetCode 450– Delete Node in a BST"
+date: "2026-04-24"
+category: "LeetCode"
+tags: ["Leetcode", "Binary Search Tree", "Recursion"]
+summary: "LeetCode Practice: Delete Node in a BST"
+---
+
+### 題目敘述：給定指定key值，要求刪除BST內指定key的node (難度: medium)
+https://leetcode.com/problems/delete-node-in-a-bst/description/?envType=study-plan-v2&envId=leetcode-75
+
+
+我們使用遞迴來解決這個問題
+
+首先考量edge cases，像是空的root或是找不到指定key
+因為我們使用遞迴處理，只要遍歷完找不到回傳null即可處理以上狀況
+
+```cpp
+    //假設為空或找不到要刪除的點回傳
+    if (!root) return nullptr;
+
+```
+
+根據BST特性，遞迴往左或往右找到指定的key
+
+```cpp
+    //去左邊刪除，把新的左子樹接回來
+    if (root->val > key) {
+        root->left = deleteNode(root->left, key);
+    }
+    //去右邊刪除，把新的右子樹接回來
+    else if (root->val < key){
+        root->right = deleteNode(root->right, key);
+    }
+
+```
+
+如果找到了我們的目標key(else)
+我們就可以來實作刪除邏輯
+此處需要區分三種情況
+
+- 1. 目標節點沒有子節點(leaf node)，直接刪除
+- 2. 目標節點只有左or右子樹，將該節點刪除後將子樹接回
+- 3. (最麻煩)目標節點有左右子樹，需接回左子樹的最大節點or右子樹的最小節點，且必須swap
+
+第三種情形擇一即可，我們選擇固定接回右子數最小節點，邏輯如下:
+
+```cpp
+    // 找到root->val == key
+    else{
+
+        if (root->left == nullptr){
+            TreeNode* temp = root->right;
+            delete root;
+            return temp;
+            // Prevent memory leak
+        }
+
+        else if (root->right == nullptr){
+            TreeNode* temp = root->left;
+            delete root;
+            return temp;
+            // Prevent memory leak
+        }
+
+        else{
+            // 改寫root為右子樹最小，改寫root並刪除原本節點
+            TreeNode* minNode = findmin(root->right);
+            root->val = minNode->val;
+            root->right = deleteNode(root->right, minNode->val);
+        }
+    }
+```
+
+另外我們額外自定義函數來尋找目標node
+此處我們使用右子樹最小值:
+
+```cpp
+    TreeNode* findmin(TreeNode* min){
+        while (min->left != nullptr){
+            min = min->left;
+        }
+        return min;
+    }
+```
+
+要注意的是因為刪除後要確保新子樹可以接回不會遺失
+這裡使用比較tricky的技巧，在遞迴的每一層都用root->left/root->right記錄回傳狀態
+這樣每次回傳後都會自動接上已經處理完的子樹
+也不需要特別處理parent
+
+```cpp
+    root->left = deleteNode(root->left, key);
+    root->right = deleteNode(root->right, key);
+```
+### **坑點**
+最後則是記得每層都要回傳給上層
+讓上層能接收更新後的狀態，才不會compile error
+
+```cpp
+    return root;
+```
+
+### 完整程式碼如下
+
+```cpp
+class Solution {
+public:
+    TreeNode* findmin(TreeNode* min){
+        while (min->left != nullptr){
+            min = min->left;
+        }
+        return min;
+    }
+
+    TreeNode* deleteNode(TreeNode* root, int key) {
+        
+        //假設為空或找不到要刪除的點回傳
+        if (!root) return nullptr;
+
+        //去左邊刪除，把新的左子樹接回來
+        if (root->val > key) {
+            root->left = deleteNode(root->left, key);
+        }
+        //去右邊刪除，把新的右子樹接回來
+        else if (root->val < key){
+            root->right = deleteNode(root->right, key);
+        }
+
+        // 找到root->val == key
+        else{
+
+            if (root->left == nullptr){
+                TreeNode* temp = root->right;
+                delete root;
+                return temp;
+                // Prevent memory leak
+            }
+
+            else if (root->right == nullptr){
+                TreeNode* temp = root->left;
+                delete root;
+                return temp;
+                // Prevent memory leak
+            }
+
+            else{
+                // 改寫root為右子樹最小，改寫root並刪除原本節點
+                TreeNode* minNode = findmin(root->right);
+                root->val = minNode->val;
+                root->right = deleteNode(root->right, minNode->val);
+            }
+        }
+        return root; 
+    }
+};
+```
+## 複雜度分析
+
+#### 時間複雜度
+
+對於樹高h的BST查找，時間複雜度為 $O(h)$ 
+- 若是樹平衡，樹高 $h = O(lg(n))$
+- 若是樹偏斜，樹高 $h = O(n)$
+
+#### 空間複雜度
+
+此處使用遞迴，會占用stack記憶體，複雜度同樹高 $O(h)$
+若是使用while+stack的非遞迴的版本，空間複雜度可以壓到 $O(1)$

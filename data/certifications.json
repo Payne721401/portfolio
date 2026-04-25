@@ -1,1 +1,14 @@
-[]
+[
+  {
+    "name": "Microsoft Azure AI Fundamentals (AI-900)",
+    "issuer": "Microsoft",
+    "date": "2024",
+    "link": "/awards/AI-900.pdf"
+  },
+  {
+    "name": "Microsoft Azure Fundamentals (AZ-900)",
+    "issuer": "Microsoft",
+    "date": "2024",
+    "link": "/awards/AZ-900.pdf"
+  }
+]

@@ -100,9 +100,10 @@ BS in Atmospheric Sciences \enspace\textbar\enspace AI Application Credit Progra
   Flutter, Python, GitHub Actions, Firebase, Cloudflare R2\\
 {\small Demo: \href{https://reurl.cc/O6ERE3}{https://reurl.cc/O6ERE3}}
 \begin{itemize}
-  \item Built a scalable decoupled architecture using Flutter, Python, Firebase, and Cloudflare R2.
-  \item Automated CI/CD pipelines via GitHub Actions and implemented R2 caching to minimize server load.
-  \item Integrated Firebase App Check and FreeRASP for multi-layer security against unauthorized API access.
+  \item Implemented Geohash spatial indexing on Firestore; reduced reads by $\sim$85\% across 460+ stations.
+  \item Downsampled forecast grids 1×1 km → 5×5 km ($\sim$95\% smaller payload); 20-min cache cut API calls by $\sim$70\%.
+  \item Built GitHub Actions CI/CD pipelines for automated testing, data ingestion, transformation, and storage.
+  \item Secured Gemini API with Firebase App Check and FreeRASP; deployed to 20 testers via App Distribution.
 \end{itemize}
 
 \vspace{6pt}

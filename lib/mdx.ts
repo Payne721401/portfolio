@@ -9,6 +9,7 @@ export interface PostMeta {
   title: string;
   date: string;
   tags: string[];
+  category?: string;
   summary: string;
   readingTime?: string;
 }
@@ -46,6 +47,7 @@ export function getPostBySlug(slug: string): Post | null {
     title: data.title ?? slug,
     date: data.date ?? "",
     tags: data.tags ?? [],
+    category: data.category ?? "",
     summary: data.summary ?? "",
     readingTime: estimateReadingTime(content),
     content,

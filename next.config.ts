@@ -4,8 +4,10 @@ import type { NextConfig } from "next";
 // Vercel builds don't set this, so basePath stays empty there.
 const isGHPages = process.env.DEPLOY_TARGET === "ghpages";
 
+const isDev = process.env.NODE_ENV === "development";
+
 const nextConfig: NextConfig = {
-  output: "export",
+  output: isDev ? undefined : "export",
   trailingSlash: true,
   basePath: isGHPages ? "/portfolio" : "",
   images: {
