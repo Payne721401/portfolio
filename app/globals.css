@@ -34,4 +34,44 @@
   .dark .rounded-xl.border {
     box-shadow: 0 1px 4px 0 rgb(0 0 0 / 0.3), 0 2px 8px 0 rgb(0 0 0 / 0.2);
   }
+
+  /* Code block styling with language labels */
+  pre {
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 0;
+  }
+
+  pre > code {
+    display: grid;
+    gap: 0;
+  }
+
+  pre code [data-line] {
+    padding: 0 1rem;
+  }
+
+  /* Language label row at top, full width */
+  pre[data-language] {
+    display: flex;
+    flex-direction: column;
+  }
+
+  pre[data-language]::before {
+    content: attr(data-language);
+    order: -1;
+    padding: 0.5rem 1rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.55);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.25);
+  }
+
+  .dark pre[data-language]::before {
+    color: rgba(255, 255, 255, 0.5);
+    border-bottom-color: rgba(255, 255, 255, 0.3);
+  }
 }

@@ -5,6 +5,7 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
+import rehypePrettyCode from "rehype-pretty-code";
 import "katex/dist/katex.min.css";
 import { getAllPostSlugs, getPostBySlug } from "@/lib/mdx";
 import { ArrowLeft, Calendar, Clock, Tag } from "lucide-react";
@@ -82,7 +83,16 @@ export default async function PostPage({
           options={{
             mdxOptions: {
               remarkPlugins: [remarkGfm, remarkMath],
-              rehypePlugins: [rehypeKatex],
+              rehypePlugins: [
+                rehypeKatex,
+                [
+                  rehypePrettyCode,
+                  {
+                    theme: "github-dark",
+                    keepBackground: true,
+                  },
+                ],
+              ],
             },
           }}
           components={{

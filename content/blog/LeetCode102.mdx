@@ -7,8 +7,9 @@ summary: "LeetCode Practice: Binary Tree Level Order Traversal"
 ---
 
 ## 題目敘述：給定二元樹，回傳level order traversal的2D 陣列 (難度: medium)
-https://leetcode.com/problems/binary-tree-level-order-traversal/description/?envType=study-plan-v2&envId=top-interview-150
+https://leetcode.com/problems/binary-tree-level-order-traversal
 
+### 詳解
 說到level order我們就會馬上想到BFS，因此我們使用Queue來解決這個問題
 
 ```cpp
@@ -19,14 +20,10 @@ https://leetcode.com/problems/binary-tree-level-order-traversal/description/?env
         //...接後續邏輯
     }
 ```
-接著我們每次while迴圈把每層的節點pop出來存進level這個動態陣列內
-若是遇到該節點有子節點，push進queue
-要記得先把queue的當前size記錄下來跑for迴圈
-才會成功遍歷該層
-並在for迴圈遍歷結束後將level陣列push進目標陣列
+接著我們每次while迴圈把每層的節點pop出來存進level這個動態陣列內。若是遇到該節點有子節點，push進queue，
+要記得先把queue的當前size記錄下來跑for迴圈，才會成功遍歷該層，並在for迴圈遍歷結束後將level陣列push進目標陣列
 
-完整邏輯如下：
-
+邏輯如下：
 ```cpp
     while (!Queue.empty()){
         int levelsize = Queue.size();
@@ -80,4 +77,4 @@ public:
 
 ### 複雜度分析
 
-一共把n個節點都遍歷過，時間複雜度為$O(n)$
+一共把$n$個節點都遍歷過，時間複雜度為$O(n)$

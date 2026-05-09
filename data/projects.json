@@ -22,7 +22,7 @@
   {
     "name": "HRV-based Sleep Stage Classification",
     "category": "academic",
-    "description": "Applied Empirical Mode Decomposition (EMD) on Heart Rate Variability (HRV) signals to extract time-frequency domain features (e.g., SDNN, RMSSD, HF). Trained and evaluated tree-based ensemble models (Random Forest, Decision Tree, SVM) to perform 5-class sleep stage classification (Wake, N1, N2, N3, REM).",
+    "description": "Applied Empirical Mode Decomposition (EMD) on Heart Rate Variability (HRV) signals extracted from PhysioNet/CinC Challenge 2018 dataset (1,985 subjects, MGH SleepLaboratory)to extract time-frequency domain features (e.g., SDNN, RMSSD, HF). Trained and evaluated models (Random Forest, Decision Tree, SVM) to perform 5-class sleep stage classification (Wake, N1, N2, N3, REM); best model achieved 82% accuracy.",
     "tags": ["Python", "Scikit-learn", "Signal Processing", "Machine Learning"],
     "github": "",
     "demo": "",
