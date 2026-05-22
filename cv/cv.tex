@@ -6,11 +6,12 @@
 
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage[top=1cm, bottom=1cm, left=1.4cm, right=1.4cm]{geometry}
+\usepackage[top=0.8cm, bottom=0.8cm, left=1.2cm, right=1.2cm]{geometry}
 \usepackage[hidelinks, colorlinks=true, urlcolor=black]{hyperref}
 \usepackage{titlesec}
 \usepackage{enumitem}
 \usepackage{parskip}
+\usepackage{multicol}
 
 \pagestyle{empty}
 \setlength{\parindent}{0pt}
@@ -19,11 +20,11 @@
 % ---- Section style -------------------------------------------
 \titleformat{\section}
   {\bfseries\normalsize}{}{0em}{}
-  [\vspace{-3pt}\rule{\linewidth}{0.6pt}\vspace{2pt}]
-\titlespacing*{\section}{0pt}{8pt}{2pt}
+  [\vspace{-3pt}\rule{\linewidth}{0.5pt}\vspace{1.5pt}]
+\titlespacing*{\section}{0pt}{6pt}{2pt}
 
 % ---- List style ----------------------------------------------
-\setlist[itemize]{noitemsep, topsep=1pt, parsep=0pt, leftmargin=1.2em, itemsep=0pt}
+\setlist[itemize]{noitemsep, topsep=1pt, parsep=0pt, leftmargin=1.1em, itemsep=0pt}
 
 % ==============================================================
 \begin{document}
@@ -37,67 +38,74 @@
     \href{mailto:90727sam@gmail.com}{90727sam@gmail.com} \enspace\textbar\enspace
     0963-581-713
   }
-\end{center}\vspace{-2pt}
+\end{center}\vspace{-4pt}
 
 % ---- SUMMARY -------------------------------------------------
 \section{Summary}
-Software engineer with a background in atmospheric science, applied ML, and data engineering. Experienced in building backend APIs, CI/CD automation pipelines, and embedded IoT systems. Passionate about bridging real-world data infrastructure with AI-powered applications.
+{\small Software engineer with a background in atmospheric science, applied ML, and data engineering. Experienced in building backend APIs, CI/CD automation pipelines, and embedded IoT systems. Passionate about bridging real-world data infrastructure with AI-powered applications.}\vspace{-2pt}
 
-% ---- WORK EXPERIENCE -----------------------------------------
+% ---- TWO-COLUMN LAYOUT ----------------------------------------
+\begin{multicols}{2}
+
+% ---- LEFT COLUMN: WORK EXPERIENCE & PROJECTS ---------------
 \section{Work Experience}
 
-\noindent\textbf{Freelance Backend Developer} \hfill \textit{Apr 2025 -- Oct 2025}\\
+\noindent\textbf{Freelance Backend Developer} \hfill \textit{Apr--Oct 2025}\\
 {\small Python \textbar\ Flask \textbar\ PostgreSQL \textbar\ TDD}
 \begin{itemize}
   \item Developed RESTful APIs in Python Flask following Test-Driven Development (TDD), achieving 100\% test coverage across all endpoints.
   \item Designed PostgreSQL database schemas and built query indexes to optimize high-frequency read operations.
-\end{itemize}
+\end{itemize}\vspace{-2pt}
 
-\noindent\textbf{Software Development \& Cybersecurity Intern} \hfill \textit{Mar 2024 -- Jul 2024}\\
+\noindent\textbf{Software Development \& Cybersecurity Intern} \hfill \textit{Mar--Jul 2024}\\
 \textbf{Ernst \& Young (EY) Consulting}\\
 {\small Python \textbar\ Django \textbar\ Selenium \textbar\ SQL}
 \begin{itemize}
   \item Architected an automated bidding document crawler and search system using Django MVC architecture.
   \item Optimized Python Selenium scraping scripts to process and structure 5,000+ external procurement records.
-\end{itemize}
+\end{itemize}\vspace{-2pt}
 
-% ---- SELECTED PROJECTS ---------------------------------------
 \section{Selected Projects}
 
-\noindent\textbf{Taiwan AI Weather App} \hfill \textit{Mar 2025 -- Oct 2025}\\
+\noindent\textbf{Taiwan AI Weather App} \hfill \textit{Mar--Oct 2025}\\
 {\small Flutter \textbar\ Python \textbar\ GitHub Actions \textbar\ Firebase \textbar\ Cloudflare R2 \textbar\ Vertex AI}
 \begin{itemize}
-  \item Integrated Vertex AI (Gemini) to power an in-app AI weather assistant providing personalized forecasts and radar analysis; secured API endpoint via Firebase App Check and FreeRASP.
+  \item Integrated Vertex AI (Gemini) to power an in-app AI weather assistant providing personalized forecasts and radar analysis.
   \item Implemented Geohash spatial indexing on Firestore, reducing database reads by $\sim$85\% across 460+ weather stations.
   \item Downsampled forecast grids 1×1 km $\to$ 5×5 km ($\sim$95\% smaller payload); local caching cut API calls by $\sim$70\%.
-  \item Built GitHub Actions CI/CD pipelines for automated testing, data ingestion, and Telegram pipeline-status alerting.
-\end{itemize}
+  \item Built GitHub Actions CI/CD pipelines for automated testing, data ingestion, and Telegram alerting.
+\end{itemize}\vspace{-2pt}
 
-\noindent\textbf{MQTT-based IoT Smart Classroom} \hfill \textit{Feb 2023 -- Aug 2023}\\
-{\small C/C++ \textbar\ ESP32 \textbar\ MQTT \textbar\ Raspberry Pi \textbar\ YOLOv8 \textbar\ Python}
+\noindent\textbf{MQTT-based IoT Smart Classroom} \hfill \textit{Feb--Aug 2023}\\
+{\small C/C++ \textbar\ ESP32 \textbar\ MQTT \textbar\ Raspberry Pi \textbar\ YOLOv8}
 \begin{itemize}
   \item Developed ESP32 MCU firmware (C/C++) and a Raspberry Pi MQTT broker for real-time IoT sensor control and device automation.
   \item Integrated YOLOv8 for real-time indoor occupancy counting (95\%+ accuracy) to automatically adjust HVAC and lighting.
   \item Awarded Finalist, National Smart Innovation Cross-disciplinary Competition (2023).
-\end{itemize}
+\end{itemize}\vspace{-2pt}
 
-\noindent\textbf{HRV-based Sleep Stage Classification} \hfill \textit{Feb 2024 -- Jun 2024}\\
+\noindent\textbf{HRV-based Sleep Stage Classification} \hfill \textit{Feb--Jun 2024}\\
 {\small Python \textbar\ Scikit-learn \textbar\ PyTorch \textbar\ Signal Processing}
 \begin{itemize}
-  \item Applied Empirical Mode Decomposition (EMD) on PhysioNet clinical dataset (1,985 subjects) to extract time-frequency HRV features (SDNN, RMSSD, HF power).
+  \item Applied Empirical Mode Decomposition (EMD) on PhysioNet clinical dataset (1,985 subjects) to extract time-frequency HRV features.
   \item Trained Random Forest, Decision Tree, and SVM models for 5-class sleep stage prediction; achieved 82\% accuracy on held-out test set.
 \end{itemize}
 
-% ---- EDUCATION -----------------------------------------------
+% ---- RIGHT COLUMN: EDUCATION & SKILLS ----------------------
+\columnbreak
+
 \section{Education}
 
-\noindent\textbf{National Taiwan University (NTU)} \hfill \textit{Starting Sep 2026}\\
-MS in Atmospheric Sciences
+\noindent\textbf{National Taiwan University}\\
+MS in Atmospheric Sciences\\
+{\small Starting Sep 2026}
 
-\noindent\textbf{National Central University (NCU)} \hfill \textit{Sep 2020 -- Jun 2024}\\
-BS in Atmospheric Sciences \textbar\ AI Application Credit Program \textbar\ Outstanding Student Scholarship (2024)
+\noindent\textbf{National Central University}\\
+BS in Atmospheric Sciences\\
+AI Application Credit Program\\
+{\small Sep 2020 -- Jun 2024}\\
+{\small Outstanding Student Scholarship (2024)}
 
-% ---- SKILLS --------------------------------------------------
 \section{Skills}
 
 \begin{itemize}
@@ -105,32 +113,29 @@ BS in Atmospheric Sciences \textbar\ AI Application Credit Program \textbar\ Out
   \item \textbf{Backend}: Flask, Django, PostgreSQL, RESTful APIs
   \item \textbf{DevOps}: GitHub Actions, Docker, Linux, Firebase, Cloudflare R2
   \item \textbf{AI/ML}: PyTorch, Scikit-learn, Vertex AI (Gemini)
-  \item \textbf{Embedded}: ESP32, MQTT, Raspberry Pi
-\end{itemize}
+\end{itemize}\vspace{-3pt}
 
-% ---- CERTIFICATIONS ------------------------------------------
 \section{Certifications}
 
 \begin{itemize}
   \item Microsoft AZ-900 -- Azure Fundamentals
   \item Microsoft AI-900 -- Azure AI Fundamentals
-\end{itemize}
+\end{itemize}\vspace{-3pt}
 
-% ---- AWARDS & COMPETITIONS -----------------------------------
 \section{Awards \& Competitions}
 
 \begin{itemize}
   \item 1st Place, NCU Sustainable Innovation Proposal Competition (2023)
   \item 2nd Place, Weather Hackathon (2023)
   \item Finalist, National Smart Innovation Cross-disciplinary Competition (2023)
-\end{itemize}
+\end{itemize}\vspace{-3pt}
 
-% ---- LANGUAGES -----------------------------------------------
 \section{Languages}
 
 \begin{itemize}
-  \item \textbf{English}: TOEIC 805
-  \item \textbf{Mandarin Chinese}: Native
+  \item English: TOEIC 805
 \end{itemize}
+
+\end{multicols}
 
 \end{document}
