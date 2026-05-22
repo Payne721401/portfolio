@@ -2,13 +2,12 @@
 %  Payne (Pei En) Yeh -- Curriculum Vitae
 %  Compiled with pdfLaTeX (no CJK packages needed).
 % =============================================================
-\documentclass[10pt, a4paper]{article}
+\documentclass[9pt, a4paper]{article}
 
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage[top=1.5cm, bottom=1.5cm, left=2cm, right=2cm]{geometry}
+\usepackage[top=1cm, bottom=1cm, left=1.4cm, right=1.4cm]{geometry}
 \usepackage[hidelinks, colorlinks=true, urlcolor=black]{hyperref}
-\usepackage{fontawesome5}
 \usepackage{titlesec}
 \usepackage{enumitem}
 \usepackage{parskip}
@@ -19,110 +18,119 @@
 
 % ---- Section style -------------------------------------------
 \titleformat{\section}
-  {\bfseries\large}{}{0em}{}
-  [\vspace{-4pt}\rule{\linewidth}{0.6pt}\vspace{2pt}]
-\titlespacing*{\section}{0pt}{12pt}{4pt}
+  {\bfseries\normalsize}{}{0em}{}
+  [\vspace{-3pt}\rule{\linewidth}{0.6pt}\vspace{2pt}]
+\titlespacing*{\section}{0pt}{8pt}{2pt}
 
 % ---- List style ----------------------------------------------
-\setlist[itemize]{noitemsep, topsep=2pt, parsep=0pt, leftmargin=1.4em}
+\setlist[itemize]{noitemsep, topsep=1pt, parsep=0pt, leftmargin=1.2em, itemsep=0pt}
 
 % ==============================================================
 \begin{document}
 
 % ---- HEADER --------------------------------------------------
 \begin{center}
-  {\LARGE\bfseries Payne (Pei En) Yeh}\\[5pt]
-  {\small
-    \faLinkedin\ \href{https://www.linkedin.com/in/payne-yeh-21362825b/}{linkedin.com/in/payne-yeh-21362825b}
-    \enspace\textbar\enspace
-    \faEnvelope\ \href{mailto:90727sam@gmail.com}{90727sam@gmail.com}
-    \enspace\textbar\enspace
-    \faPhone\ 0963-581-713
+  {\Large\bfseries Payne (Pei En) Yeh}\\[1pt]
+  {\footnotesize
+    portfolio-payneyeh.vercel.app \enspace\textbar\enspace
+    github.com/Payne721401 \enspace\textbar\enspace
+    \href{mailto:90727sam@gmail.com}{90727sam@gmail.com} \enspace\textbar\enspace
+    0963-581-713
   }
-\end{center}
+\end{center}\vspace{-2pt}
+
+% ---- SUMMARY -------------------------------------------------
+\section{Summary}
+Software engineer with a background in atmospheric science, applied ML, and data engineering. Experienced in building backend APIs, CI/CD automation pipelines, and embedded IoT systems. Passionate about bridging real-world data infrastructure with AI-powered applications.
+
+% ---- WORK EXPERIENCE -----------------------------------------
+\section{Work Experience}
+
+\noindent\textbf{Freelance Backend Developer} \hfill \textit{Apr 2025 -- Oct 2025}\\
+{\small Python \textbar\ Flask \textbar\ PostgreSQL \textbar\ TDD}
+\begin{itemize}
+  \item Developed RESTful APIs in Python Flask following Test-Driven Development (TDD), achieving 100\% test coverage across all endpoints.
+  \item Designed PostgreSQL database schemas and built query indexes to optimize high-frequency read operations.
+\end{itemize}
+
+\noindent\textbf{Software Development \& Cybersecurity Intern} \hfill \textit{Mar 2024 -- Jul 2024}\\
+\textbf{Ernst \& Young (EY) Consulting}\\
+{\small Python \textbar\ Django \textbar\ Selenium \textbar\ SQL}
+\begin{itemize}
+  \item Architected an automated bidding document crawler and search system using Django MVC architecture.
+  \item Optimized Python Selenium scraping scripts to process and structure 5,000+ external procurement records.
+\end{itemize}
+
+% ---- SELECTED PROJECTS ---------------------------------------
+\section{Selected Projects}
+
+\noindent\textbf{Taiwan AI Weather App} \hfill \textit{Mar 2025 -- Oct 2025}\\
+{\small Flutter \textbar\ Python \textbar\ GitHub Actions \textbar\ Firebase \textbar\ Cloudflare R2 \textbar\ Vertex AI}
+\begin{itemize}
+  \item Integrated Vertex AI (Gemini) to power an in-app AI weather assistant providing personalized forecasts and radar analysis; secured API endpoint via Firebase App Check and FreeRASP.
+  \item Implemented Geohash spatial indexing on Firestore, reducing database reads by $\sim$85\% across 460+ weather stations.
+  \item Downsampled forecast grids 1×1 km $\to$ 5×5 km ($\sim$95\% smaller payload); local caching cut API calls by $\sim$70\%.
+  \item Built GitHub Actions CI/CD pipelines for automated testing, data ingestion, and Telegram pipeline-status alerting.
+\end{itemize}
+
+\noindent\textbf{MQTT-based IoT Smart Classroom} \hfill \textit{Feb 2023 -- Aug 2023}\\
+{\small C/C++ \textbar\ ESP32 \textbar\ MQTT \textbar\ Raspberry Pi \textbar\ YOLOv8 \textbar\ Python}
+\begin{itemize}
+  \item Developed ESP32 MCU firmware (C/C++) and a Raspberry Pi MQTT broker for real-time IoT sensor control and device automation.
+  \item Integrated YOLOv8 for real-time indoor occupancy counting (95\%+ accuracy) to automatically adjust HVAC and lighting.
+  \item Awarded Finalist, National Smart Innovation Cross-disciplinary Competition (2023).
+\end{itemize}
+
+\noindent\textbf{HRV-based Sleep Stage Classification} \hfill \textit{Feb 2024 -- Jun 2024}\\
+{\small Python \textbar\ Scikit-learn \textbar\ PyTorch \textbar\ Signal Processing}
+\begin{itemize}
+  \item Applied Empirical Mode Decomposition (EMD) on PhysioNet clinical dataset (1,985 subjects) to extract time-frequency HRV features (SDNN, RMSSD, HF power).
+  \item Trained Random Forest, Decision Tree, and SVM models for 5-class sleep stage prediction; achieved 82\% accuracy on held-out test set.
+\end{itemize}
 
 % ---- EDUCATION -----------------------------------------------
 \section{Education}
 
-\noindent\textbf{National Taiwan University (NTU)} \hfill \textit{Sep 2026 -- Jun 2028 (Expected)}\\
-MS in Atmospheric Sciences \textit{(On Leave)}
+\noindent\textbf{National Taiwan University (NTU)} \hfill \textit{Starting Sep 2026}\\
+MS in Atmospheric Sciences
 
-\vspace{6pt}
 \noindent\textbf{National Central University (NCU)} \hfill \textit{Sep 2020 -- Jun 2024}\\
-BS in Atmospheric Sciences \enspace\textbar\enspace AI Application Credit Program \enspace\textbar\enspace
-2024 NCU Outstanding Student Scholarship
+BS in Atmospheric Sciences \textbar\ AI Application Credit Program \textbar\ Outstanding Student Scholarship (2024)
 
 % ---- SKILLS --------------------------------------------------
 \section{Skills}
 
 \begin{itemize}
-  \item \textbf{Languages}: Python, C/C++, SQL, JavaScript, Dart (Flutter)
-  \item \textbf{Backend}: Django, Flask, Selenium, PostgreSQL, RESTful APIs
-  \item \textbf{DevOps \& Infra}: Git, GitHub Actions (CI/CD), Docker, Linux, Cloudflare R2, Firebase
-  \item \textbf{AI/ML}: PyTorch, TensorFlow, Scikit-learn
+  \item \textbf{Languages}: Python, C/C++, SQL, JavaScript/TypeScript, Dart
+  \item \textbf{Backend}: Flask, Django, PostgreSQL, RESTful APIs
+  \item \textbf{DevOps}: GitHub Actions, Docker, Linux, Firebase, Cloudflare R2
+  \item \textbf{AI/ML}: PyTorch, Scikit-learn, Vertex AI (Gemini)
+  \item \textbf{Embedded}: ESP32, MQTT, Raspberry Pi
+\end{itemize}
+
+% ---- CERTIFICATIONS ------------------------------------------
+\section{Certifications}
+
+\begin{itemize}
+  \item Microsoft AZ-900 -- Azure Fundamentals
+  \item Microsoft AI-900 -- Azure AI Fundamentals
 \end{itemize}
 
 % ---- AWARDS & COMPETITIONS -----------------------------------
 \section{Awards \& Competitions}
 
 \begin{itemize}
-  \item \textbf{NCU Outstanding Student Scholarship} (2024)
-  \item \textbf{1st Place,} NCU Sustainable Innovation Proposal Competition (2023)
-  \item \textbf{2nd Place,} Weather Hackathon (2023) \textit{(Previously 3rd Place in 2022)}
-  \item \textbf{Finalist (Notable Award),} National Smart Innovation Cross-disciplinary Competition (2023)
+  \item 1st Place, NCU Sustainable Innovation Proposal Competition (2023)
+  \item 2nd Place, Weather Hackathon (2023)
+  \item Finalist, National Smart Innovation Cross-disciplinary Competition (2023)
 \end{itemize}
 
-% ---- WORK EXPERIENCE -----------------------------------------
-\section{Work Experience}
+% ---- LANGUAGES -----------------------------------------------
+\section{Languages}
 
-\noindent\textbf{Freelance Backend Developer}\\
-{\small Python (Flask), RESTful APIs, PostgreSQL, TDD \enspace\textbar\enspace Apr 2025 -- Oct 2025}
 \begin{itemize}
-  \item Developed Python Flask RESTful APIs following Test-Driven Development (TDD) principles.
-  \item Designed PostgreSQL database schemas and created indexes to optimize high-frequency queries.
-  \item Achieved 100\% test coverage across all API endpoints.
-\end{itemize}
-
-\vspace{6pt}
-\noindent\textbf{Ernst \& Young (EY) Consulting -- Web Development \& Cybersecurity Intern}\\
-{\small Python (Django, Selenium), SQL \enspace\textbar\enspace Mar 2024 -- Jul 2024}
-\begin{itemize}
-  \item Architected an automated bidding crawler and search system based on Django MVC architecture.
-  \item Optimized Python Selenium scraping scripts to process and structure thousands of external records.
-  \item Analyzed banking AI and cybersecurity trends to assist in system compliance assessments.
-\end{itemize}
-
-% ---- SELECTED PROJECTS ---------------------------------------
-\section{Selected Projects}
-
-\noindent\textbf{Taiwan AI Weather App} \enspace\textbar\enspace
-  \href{https://github.com/Payne721401/FlutterWeatherApp}{[GitHub]} \enspace\textbar\enspace
-  Flutter, Python, GitHub Actions, Firebase, Cloudflare R2\\
-{\small Demo: \href{https://reurl.cc/O6ERE3}{https://reurl.cc/O6ERE3}}
-\begin{itemize}
-  \item Implemented Geohash spatial indexing on Firestore; reduced reads by $\sim$85\% across 460+ stations.
-  \item Downsampled forecast grids 1×1 km → 5×5 km ($\sim$95\% smaller payload); 20-min cache cut API calls by $\sim$70\%.
-  \item Built GitHub Actions CI/CD pipelines for automated testing, data ingestion, transformation, and storage.
-  \item Secured Gemini API with Firebase App Check and FreeRASP; deployed to 20 testers via App Distribution.
-\end{itemize}
-
-\vspace{6pt}
-\noindent\textbf{MQTT-based IoT Smart Classroom} \enspace\textbar\enspace
-  \href{https://github.com/Payne721401/iot-smart-classroom}{[GitHub]} \enspace\textbar\enspace
-  C/C++, MQTT, ESP32, YOLOv8\\
-{\small Demo: \href{https://reurl.cc/2a8lk9}{https://reurl.cc/2a8lk9}}
-\begin{itemize}
-  \item Developed ESP32 MCU firmware (C/C++) and a Raspberry Pi MQTT broker for real-time sensor control.
-  \item Integrated YOLOv8 for real-time occupancy counting to automate HVAC and lighting control.
-  \item Awarded Finalist in the National Smart Innovation Cross-disciplinary Competition (2023).
-\end{itemize}
-
-\vspace{6pt}
-\noindent\textbf{HRV-based Sleep Stage Classification} \enspace\textbar\enspace
-  Python, Scikit-learn, Signal Processing
-\begin{itemize}
-  \item Applied Empirical Mode Decomposition (EMD) on HRV signals to extract time-frequency features (SDNN, RMSSD, HF power).
-  \item Trained Random Forest, Decision Tree, and SVM models for 5-class sleep stage classification (Wake, N1--N3, REM).
+  \item \textbf{English}: TOEIC 805
+  \item \textbf{Mandarin Chinese}: Native
 \end{itemize}
 
 \end{document}
