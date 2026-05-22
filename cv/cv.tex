@@ -2,7 +2,7 @@
 %  Payne (Pei En) Yeh -- Curriculum Vitae
 %  Compiled with pdfLaTeX (no CJK packages needed).
 % =============================================================
-\documentclass[9pt, a4paper]{article}
+\documentclass[10pt, a4paper]{article}
 
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
@@ -11,7 +11,6 @@
 \usepackage{titlesec}
 \usepackage{enumitem}
 \usepackage{parskip}
-\usepackage{multicol}
 
 \pagestyle{empty}
 \setlength{\parindent}{0pt}
@@ -19,35 +18,34 @@
 
 % ---- Section style -------------------------------------------
 \titleformat{\section}
-  {\bfseries\normalsize}{}{0em}{}
-  [\vspace{-3pt}\rule{\linewidth}{0.5pt}\vspace{1.5pt}]
-\titlespacing*{\section}{0pt}{6pt}{2pt}
+  {\bfseries\large}{}{0em}{}
+  [\vspace{-2pt}\rule{\linewidth}{0.5pt}\vspace{2pt}]
+\titlespacing*{\section}{0pt}{8pt}{3pt}
 
 % ---- List style ----------------------------------------------
-\setlist[itemize]{noitemsep, topsep=1pt, parsep=0pt, leftmargin=1.1em, itemsep=0pt}
+\setlist[itemize]{noitemsep, topsep=2pt, parsep=0pt, leftmargin=1.2em, itemsep=2pt}
 
 % ==============================================================
 \begin{document}
 
 % ---- HEADER --------------------------------------------------
 \begin{center}
-  {\Large\bfseries Payne (Pei En) Yeh}\\[1pt]
-  {\footnotesize
+  {\Large\bfseries Payne (Pei En) Yeh}\\[2pt]
+  {\small
     portfolio-payneyeh.vercel.app \enspace\textbar\enspace
     github.com/Payne721401 \enspace\textbar\enspace
     \href{mailto:90727sam@gmail.com}{90727sam@gmail.com} \enspace\textbar\enspace
     0963-581-713
   }
-\end{center}\vspace{-4pt}
+\end{center}\vspace{-2pt}
 
 % ---- SUMMARY -------------------------------------------------
 \section{Summary}
-{\small Software engineer with a background in atmospheric science, applied ML, and data engineering. Experienced in building backend APIs, CI/CD automation pipelines, and embedded IoT systems. Passionate about bridging real-world data infrastructure with AI-powered applications.}\vspace{-2pt}
+Software engineer with a background in atmospheric science, applied ML, and data engineering. Experienced in building backend APIs, CI/CD automation pipelines, and embedded IoT systems. Passionate about bridging real-world data infrastructure with AI-powered applications.\vspace{-2pt}
 
 % ---- TWO-COLUMN LAYOUT ----------------------------------------
-\begin{multicols}{2}
+\begin{minipage}[t]{0.6\textwidth}
 
-% ---- LEFT COLUMN: WORK EXPERIENCE & PROJECTS ---------------
 \section{Work Experience}
 
 \noindent\textbf{Freelance Backend Developer} \hfill \textit{Apr--Oct 2025}\\
@@ -55,15 +53,15 @@
 \begin{itemize}
   \item Developed RESTful APIs in Python Flask following Test-Driven Development (TDD), achieving 100\% test coverage across all endpoints.
   \item Designed PostgreSQL database schemas and built query indexes to optimize high-frequency read operations.
-\end{itemize}\vspace{-2pt}
+\end{itemize}\vspace{3pt}
 
 \noindent\textbf{Software Development \& Cybersecurity Intern} \hfill \textit{Mar--Jul 2024}\\
-\textbf{Ernst \& Young (EY) Consulting}\\
+\noindent\textbf{Ernst \& Young (EY) Consulting}\\
 {\small Python \textbar\ Django \textbar\ Selenium \textbar\ SQL}
 \begin{itemize}
   \item Architected an automated bidding document crawler and search system using Django MVC architecture.
   \item Optimized Python Selenium scraping scripts to process and structure 5,000+ external procurement records.
-\end{itemize}\vspace{-2pt}
+\end{itemize}\vspace{3pt}
 
 \section{Selected Projects}
 
@@ -74,7 +72,7 @@
   \item Implemented Geohash spatial indexing on Firestore, reducing database reads by $\sim$85\% across 460+ weather stations.
   \item Downsampled forecast grids 1×1 km $\to$ 5×5 km ($\sim$95\% smaller payload); local caching cut API calls by $\sim$70\%.
   \item Built GitHub Actions CI/CD pipelines for automated testing, data ingestion, and Telegram alerting.
-\end{itemize}\vspace{-2pt}
+\end{itemize}\vspace{3pt}
 
 \noindent\textbf{MQTT-based IoT Smart Classroom} \hfill \textit{Feb--Aug 2023}\\
 {\small C/C++ \textbar\ ESP32 \textbar\ MQTT \textbar\ Raspberry Pi \textbar\ YOLOv8}
@@ -82,7 +80,7 @@
   \item Developed ESP32 MCU firmware (C/C++) and a Raspberry Pi MQTT broker for real-time IoT sensor control and device automation.
   \item Integrated YOLOv8 for real-time indoor occupancy counting (95\%+ accuracy) to automatically adjust HVAC and lighting.
   \item Awarded Finalist, National Smart Innovation Cross-disciplinary Competition (2023).
-\end{itemize}\vspace{-2pt}
+\end{itemize}\vspace{3pt}
 
 \noindent\textbf{HRV-based Sleep Stage Classification} \hfill \textit{Feb--Jun 2024}\\
 {\small Python \textbar\ Scikit-learn \textbar\ PyTorch \textbar\ Signal Processing}
@@ -91,20 +89,21 @@
   \item Trained Random Forest, Decision Tree, and SVM models for 5-class sleep stage prediction; achieved 82\% accuracy on held-out test set.
 \end{itemize}
 
-% ---- RIGHT COLUMN: EDUCATION & SKILLS ----------------------
-\columnbreak
+\end{minipage}%
+\hfill%
+\begin{minipage}[t]{0.37\textwidth}
 
 \section{Education}
 
 \noindent\textbf{National Taiwan University}\\
 MS in Atmospheric Sciences\\
-{\small Starting Sep 2026}
+{\small Starting Sep 2026}\vspace{3pt}
 
 \noindent\textbf{National Central University}\\
 BS in Atmospheric Sciences\\
 AI Application Credit Program\\
 {\small Sep 2020 -- Jun 2024}\\
-{\small Outstanding Student Scholarship (2024)}
+{\small Outstanding Student Scholarship (2024)}\vspace{3pt}
 
 \section{Skills}
 
@@ -113,14 +112,14 @@ AI Application Credit Program\\
   \item \textbf{Backend}: Flask, Django, PostgreSQL, RESTful APIs
   \item \textbf{DevOps}: GitHub Actions, Docker, Linux, Firebase, Cloudflare R2
   \item \textbf{AI/ML}: PyTorch, Scikit-learn, Vertex AI (Gemini)
-\end{itemize}\vspace{-3pt}
+\end{itemize}\vspace{2pt}
 
 \section{Certifications}
 
 \begin{itemize}
   \item Microsoft AZ-900 -- Azure Fundamentals
   \item Microsoft AI-900 -- Azure AI Fundamentals
-\end{itemize}\vspace{-3pt}
+\end{itemize}\vspace{2pt}
 
 \section{Awards \& Competitions}
 
@@ -128,7 +127,7 @@ AI Application Credit Program\\
   \item 1st Place, NCU Sustainable Innovation Proposal Competition (2023)
   \item 2nd Place, Weather Hackathon (2023)
   \item Finalist, National Smart Innovation Cross-disciplinary Competition (2023)
-\end{itemize}\vspace{-3pt}
+\end{itemize}\vspace{2pt}
 
 \section{Languages}
 
@@ -136,6 +135,6 @@ AI Application Credit Program\\
   \item English: TOEIC 805
 \end{itemize}
 
-\end{multicols}
+\end{minipage}
 
 \end{document}
