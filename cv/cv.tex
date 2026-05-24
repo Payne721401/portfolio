@@ -6,7 +6,7 @@
 
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage[top=0.8cm, bottom=0.8cm, left=1.2cm, right=1.2cm]{geometry}
+\usepackage[top=1cm, bottom=1cm, left=1.3cm, right=1.3cm]{geometry}
 \usepackage[hidelinks, colorlinks=true, urlcolor=black]{hyperref}
 \usepackage{titlesec}
 \usepackage{enumitem}
@@ -15,22 +15,23 @@
 \pagestyle{empty}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0pt}
+\renewcommand{\baselinestretch}{1.08}
 
 % ---- Section style -------------------------------------------
 \titleformat{\section}
   {\bfseries\large}{}{0em}{}
-  [\vspace{-2pt}\rule{\linewidth}{0.5pt}\vspace{2pt}]
-\titlespacing*{\section}{0pt}{8pt}{3pt}
+  [\vspace{-2pt}\rule{\linewidth}{0.5pt}\vspace{3pt}]
+\titlespacing*{\section}{0pt}{10pt}{5pt}
 
 % ---- List style ----------------------------------------------
-\setlist[itemize]{noitemsep, topsep=2pt, parsep=0pt, leftmargin=1.2em, itemsep=2pt}
+\setlist[itemize]{noitemsep, topsep=2pt, parsep=0pt, leftmargin=1.2em, itemsep=3pt}
 
 % ==============================================================
 \begin{document}
 
 % ---- HEADER --------------------------------------------------
 \begin{center}
-  {\Large\bfseries Payne (Pei En) Yeh}\\[2pt]
+  {\LARGE\bfseries Payne (Pei En) Yeh}\\[3pt]
   {\small
     portfolio-payneyeh.vercel.app \enspace\textbar\enspace
     github.com/Payne721401 \enspace\textbar\enspace
@@ -53,7 +54,7 @@ Software engineer with a background in atmospheric science, applied ML, and data
 \begin{itemize}
   \item Developed RESTful APIs in Python Flask following Test-Driven Development (TDD), achieving 100\% test coverage across all endpoints.
   \item Designed PostgreSQL database schemas and built query indexes to optimize high-frequency read operations.
-\end{itemize}\vspace{3pt}
+\end{itemize}\vspace{5pt}
 
 \noindent\textbf{Software Development \& Cybersecurity Intern} \hfill \textit{Mar--Jul 2024}\\
 \noindent\textbf{Ernst \& Young (EY) Consulting}\\
@@ -61,7 +62,7 @@ Software engineer with a background in atmospheric science, applied ML, and data
 \begin{itemize}
   \item Architected an automated bidding document crawler and search system using Django MVC architecture.
   \item Optimized Python Selenium scraping scripts to process and structure 5,000+ external procurement records.
-\end{itemize}\vspace{3pt}
+\end{itemize}\vspace{5pt}
 
 \section{Selected Projects}
 
@@ -72,7 +73,7 @@ Software engineer with a background in atmospheric science, applied ML, and data
   \item Implemented Geohash spatial indexing on Firestore, reducing database reads by $\sim$85\% across 460+ weather stations.
   \item Downsampled forecast grids 1×1 km $\to$ 5×5 km ($\sim$95\% smaller payload); local caching cut API calls by $\sim$70\%.
   \item Built GitHub Actions CI/CD pipelines for automated testing, data ingestion, and Telegram alerting.
-\end{itemize}\vspace{3pt}
+\end{itemize}\vspace{5pt}
 
 \noindent\textbf{MQTT-based IoT Smart Classroom} \hfill \textit{Feb--Aug 2023}\\
 {\small C/C++ \textbar\ ESP32 \textbar\ MQTT \textbar\ Raspberry Pi \textbar\ YOLOv8}
@@ -80,7 +81,7 @@ Software engineer with a background in atmospheric science, applied ML, and data
   \item Developed ESP32 MCU firmware (C/C++) and a Raspberry Pi MQTT broker for real-time IoT sensor control and device automation.
   \item Integrated YOLOv8 for real-time indoor occupancy counting (95\%+ accuracy) to automatically adjust HVAC and lighting.
   \item Awarded Finalist, National Smart Innovation Cross-disciplinary Competition (2023).
-\end{itemize}\vspace{3pt}
+\end{itemize}\vspace{5pt}
 
 \noindent\textbf{HRV-based Sleep Stage Classification} \hfill \textit{Feb--Jun 2024}\\
 {\small Python \textbar\ Scikit-learn \textbar\ PyTorch \textbar\ Signal Processing}
@@ -97,13 +98,13 @@ Software engineer with a background in atmospheric science, applied ML, and data
 
 \noindent\textbf{National Taiwan University}\\
 MS in Atmospheric Sciences\\
-{\small Starting Sep 2026}\vspace{3pt}
+{\small Starting Sep 2026}\vspace{4pt}
 
 \noindent\textbf{National Central University}\\
 BS in Atmospheric Sciences\\
 AI Application Credit Program\\
 {\small Sep 2020 -- Jun 2024}\\
-{\small Outstanding Student Scholarship (2024)}\vspace{3pt}
+{\small Outstanding Student Scholarship (2024)}\vspace{4pt}
 
 \section{Skills}
 
@@ -112,14 +113,14 @@ AI Application Credit Program\\
   \item \textbf{Backend}: Flask, Django, PostgreSQL, RESTful APIs
   \item \textbf{DevOps}: GitHub Actions, Docker, Linux, Firebase, Cloudflare R2
   \item \textbf{AI/ML}: PyTorch, Scikit-learn, Vertex AI (Gemini)
-\end{itemize}\vspace{2pt}
+\end{itemize}\vspace{3pt}
 
 \section{Certifications}
 
 \begin{itemize}
   \item Microsoft AZ-900 -- Azure Fundamentals
   \item Microsoft AI-900 -- Azure AI Fundamentals
-\end{itemize}\vspace{2pt}
+\end{itemize}\vspace{3pt}
 
 \section{Awards \& Competitions}
 
@@ -127,7 +128,7 @@ AI Application Credit Program\\
   \item 1st Place, NCU Sustainable Innovation Proposal Competition (2023)
   \item 2nd Place, Weather Hackathon (2023)
   \item Finalist, National Smart Innovation Cross-disciplinary Competition (2023)
-\end{itemize}\vspace{2pt}
+\end{itemize}\vspace{3pt}
 
 \section{Languages}
 
